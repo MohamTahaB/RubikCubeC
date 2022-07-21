@@ -47,5 +47,80 @@ class Cube {
             rotateFrontClkw() ;
         }
 
-        
+        void rotateBackClkw() {
+            char att = Back[0][1] ;
+            Back[0][1] = Back[0][0] ;
+            Back[0][0] = Back[1][0] ;
+            Back[1][0] = Back[1][1] ;
+            Back[1][1] = att ;
+
+            //now to the rest
+            char aux1  = Up[0][1] , aux2 = Up[0][0] ;
+            Up[0][1] = Right[1][1] ;
+            Up[0][0] = Right[0][1] ;
+
+            Right[1][1] = Down[1][0] ;
+            Right[0][1] = Down[1][1] ;
+
+            Down[1][0] = Left[0][0] ;
+            Down[1][1] = Left[1][0] ;
+
+            Left[0][0] = aux1 ;
+            Left[1][0] = aux2 ;
+        }
+
+        void rotateBackAntiClkw() {
+            rotateBackClkw() ;
+            rotateBackClkw() ;
+            rotateBackClkw() ;
+        }
+
+        void rotateRightClkw() {
+            char aux = Right[0][0] ;
+            Right[0][0] = Right[1][0] ;
+            Right[1][0] = Right[1][1] ;
+            Right[1][1] = Right[0][1] ;
+            Right[0][1] = aux ;
+
+            char aux1 = Up[0][1]  , aux2 = Up[1][1] ;
+            Up[0][1] = Front[0][1] ;
+            Up[1][1] = Front[1][1] ;
+
+            Front[0][1] = Down[0][1] ;
+            Front[1][1] = Down[1][1] ;
+
+            Down[0][1] = Back[1][0] ;
+            Down[1][1] = Back[0][0] ;
+
+            Back[1][0] = aux1 ;
+            Back[0][0] = aux2 ;
+        }
+
+        void rotateRightAntiClkw() {
+            rotateRightClkw() ;
+            rotateRightClkw() ;
+            rotateRightClkw() ;
+        }
+
+        void rotateLeftClkw() {
+            char aux = Left[0][0] ;
+            Left[0][0] = Left[1][0] ;
+            Left[1][0] = Left[1][1] ;
+            Left[1][1] = Left[0][1] ;
+            Left[0][1] = aux ;
+
+            char aux1 = Up[0][0] , aux2 = Up[1][0] ;
+
+            Up[0][0] = Back[1][1] ;
+            Up[1][0] = Back[0][1] ;
+
+            Back[1][1] = Down[0][0] ;
+            Back[0][1] = Down[1][0] ;
+
+            Down[0][0] = Front[0][0] ;
+            Down[1][0] = Front[1][0] ;
+
+            Front[0][0] = aux1 ;
+            Front[1][0] = aux2 ;
+        }
 };
