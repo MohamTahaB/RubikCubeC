@@ -1,0 +1,3 @@
+/Users/mohamedtahabayoumi/Documents/GitHub/RubikCubeC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/mohamedtahabayoumi/Documents/GitHub/RubikCubeC/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mohamedtahabayoumi/Documents/GitHub/RubikCubeC/cmake-build-debug/CMakeFiles/RubikCubeC.dir
