@@ -123,4 +123,70 @@ class Cube {
             Front[0][0] = aux1 ;
             Front[1][0] = aux2 ;
         }
+
+        void rotateLeftAntiClkw(){
+            rotateLeftClkw() ;
+            rotateLeftClkw() ;
+            rotateLeftClkw() ;
+        }
+
+        void rotateUpClkw() {
+            char aux = Up[0][0] ;
+            Up[0][0] = Up[1][0] ;
+            Up[1][0] = Up[1][1] ;
+            Up[1][1] = Up[0][1] ;
+            Up[0][1] = aux ;
+
+            // now the rest
+
+            char aux1 = Back[0][0] , aux2 = Back[0][1] ;
+
+            Back[0][0] = Left[0][0] ;
+            Back[0][1] = Left[0][1] ;
+
+            Left[0][0] = Front[0][0] ;
+            Left[0][1] = Front[0][1] ;
+
+            Front[0][0] = Right[0][0] ;
+            Front[0][1] = Right[0][1] ;
+
+            Right[0][0] = aux1 ;
+            Right[0][1] = aux2 ;
+        }
+
+        void rotateUpAntiClkw(){
+            rotateUpClkw() ;
+            rotateUpClkw() ;
+            rotateUpClkw() ;
+        }
+
+        void rotateDownClkw(){
+            char aux = Down[0][0] ;
+            Down[0][0] = Down[1][0] ;
+            Down[1][0] = Down[1][1] ;
+            Down[1][1] = Down[0][1] ;
+            Down[0][1] = aux ;
+
+            //now the rest
+
+            char aux1 = Front[1][0] , aux2 = Front[1][1] ;
+
+            Front[1][0] = Left[1][0] ;
+            Front[1][1] = Left[1][1] ;
+
+            Left[1][0] = Back[1][0] ;
+            Left[1][1] = Back[1][1] ;
+
+            Back[1][0] = Right[1][0] ;
+            Back[1][1] = Right[1][1] ;
+
+            Right[1][0] = aux1 ;
+            Right[1][1] = aux2 ;
+        }
+
+        void rotateDownAntiClkw(){
+            rotateDownClkw() ;
+            rotateDownClkw() ;
+            rotateDownClkw() ;
+        }
 };
