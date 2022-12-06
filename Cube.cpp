@@ -1,11 +1,12 @@
 class Cube {
-    public:
+
         char Up[2][2] ;
         char Down[2][2] ;
         char Right[2][2] ;
         char Left[2][2] ;
         char Front[2][2] ;
         char Back[2][2] ;
+public :
         Cube() {
             for (int i = 0 ; i < 2 ; i++) {
                 for (int j = 0 ; j < 2 ; j++) {
