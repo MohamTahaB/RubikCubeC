@@ -1,4 +1,8 @@
-class Cube {
+#include <iostream>
+
+using namespace std ;
+
+class Carreau {
 
         char Up[2][2] ;
         char Down[2][2] ;
@@ -7,7 +11,7 @@ class Cube {
         char Front[2][2] ;
         char Back[2][2] ;
 public :
-        Cube() {
+        Carreau() {
             for (int i = 0 ; i < 2 ; i++) {
                 for (int j = 0 ; j < 2 ; j++) {
                     Up[i][j] = 'w' ;
@@ -189,5 +193,37 @@ public :
             rotateDownClkw() ;
             rotateDownClkw() ;
             rotateDownClkw() ;
+        }
+
+        void print() {
+            cout << "Here is up : " << endl ;
+            cout << Up[0][0] << " " << Up[0][1] << endl ;
+            cout << Up[1][0] << " " << Up[1][1] << endl ;
+            cout << endl ;
+
+            cout << "Here is down : " << endl ;
+            cout << Down[0][0] << " " << Down[0][1] << endl ;
+            cout << Down[1][0] << " " << Down[1][1] << endl ;
+            cout << endl ;
+
+            cout << "Here is right : " << endl ;
+            cout << Right[0][0] << " " << Right[0][1] << endl ;
+            cout << Right[1][0] << " " << Right[1][1] << endl ;
+            cout << endl ;
+
+            cout << "Here is left : " << endl ;
+            cout << Left[0][0] << " " << Left[0][1] << endl ;
+            cout << Left[1][0] << " " << Left[1][1] << endl ;
+            cout << endl ;
+
+            cout << "Here is front : " << endl ;
+            cout << Front[0][0] << " " << Front[0][1] << endl ;
+            cout << Front[1][0] << " " << Front[1][1] << endl ;
+            cout << endl ;
+
+            cout << "Here is back : " << endl ;
+            cout << Back[0][0] << " " << Back[0][1] << endl ;
+            cout << Back[1][0] << " " << Back[1][1] << endl ;
+            cout << endl ;
         }
 };

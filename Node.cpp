@@ -1,15 +1,21 @@
-#include "Cube.cpp"
+
+
+
+#ifndef CARREAU_CPP
+#define CARREAU_CPP
+
+#include "Carreau.cpp"
 #include <vector>
 
 using namespace std ;
 
 class Node {
-    Cube currentCube ;
+    Carreau currentCube ;
     Node* fatherCube ;
     vector<Node *> sons ;
     int level ;
 public :
-    Node( Cube currentCube , Node* fatherCube , vector<Node*> sons, int level) {
+    Node( Carreau currentCube , Node* fatherCube , vector<Node*> sons, int level) {
         this->currentCube = currentCube ;
         *(this->fatherCube) = *fatherCube ;
         (this->sons).clear() ;
@@ -22,22 +28,37 @@ public :
     }
 
 
-    Node( Cube currentCube , Node* fatherCube , int level) {
+    Node( Carreau currentCube , Node* fatherCube , int level) {
         this->currentCube = currentCube ;
         *(this->fatherCube) = *fatherCube ;
         this->sons.clear() ;
         this->level = level ;
     }
 
-    void addSon(Cube son) {
+    void addSon(Carreau son) {
         Node* aux = new Node(son, this, level+1) ;
         sons.push_back(aux) ;
     }
 
-    Cube getCurrentCube() {
+    Carreau getCurrentCube() {
         return currentCube;
     }
 
-    
+    Node getFatherCube() {
+        return *fatherCube;
+    }
+
+    vector<Node*> getSons() {
+
+        return sons;
+    }
+
+
+
+    int getLevel() {
+        return level;
+    }
 };
+
+#endif
 
